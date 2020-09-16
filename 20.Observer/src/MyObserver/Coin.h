@@ -5,7 +5,14 @@
 
 namespace MyObserver {
 
-
+	struct Ex
+	{
+		void execMe(int coin)
+		{
+			std::cout << "ki kick";
+		}
+	};
+	
 	struct Coin : Observable<Coin, void(Coin*)>
 	{
 		void notify() override
@@ -40,5 +47,6 @@ namespace MyObserver {
 		}
 	};
 
+	
 
 }
