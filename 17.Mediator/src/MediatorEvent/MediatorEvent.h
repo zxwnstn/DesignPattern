@@ -1,11 +1,10 @@
 #pragma once
-#include "pch.h"
 
 #include "Players.h"
 
-struct MediatorEvent
-{
-	static void exec()
+namespace MediatorEvent {
+
+	inline void exec()
 	{
 		Game game;
 		Player player{ "Sam", game };
@@ -15,4 +14,5 @@ struct MediatorEvent
 		player.score();
 		player.score();
 	}
-};
+
+}

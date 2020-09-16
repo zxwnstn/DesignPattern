@@ -2,7 +2,11 @@
 
 #include "Event.h"
 
-struct Game
-{
-	boost::signals2::signal<void(EventData*)> events;
-};
+namespace MediatorEvent {
+
+	struct Game
+	{
+		boost::signals2::signal<void(EventData*)> events;
+	};
+
+}

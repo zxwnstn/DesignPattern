@@ -2,9 +2,11 @@
 
 #include "BasicObserver/BasicObserver.h"
 #include "SignalObserver/SignalObserverPattern.h"
+#include "MyObserver/MyObserver.h"
 
 int main()
 {
-	BasicObserverPattern::exec();
-	SigObserverPattern::exec();
+	//BasicObserver::exec();
+	//SigObserver::exec();
+	MyObserver::exec();
 }

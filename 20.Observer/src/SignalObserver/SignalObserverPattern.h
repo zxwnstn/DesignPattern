@@ -2,13 +2,13 @@
 
 #include "SignalObserver.h"
 
-struct SigObserverPattern
-{
-	static void exec()
+namespace SigObserver {
+	
+	inline void exec()
 	{
-		SigPerson p{ 123 };
+		Person p{ 123 };
 
-		auto conn = p.property_changed.connect([](SigPerson& person, const std::string& prop_name){
+		auto conn = p.property_changed.connect([](Person& person, const std::string& prop_name) {
 			std::cout << prop_name << " sex has been changed!" << std::endl;
 		});
 
@@ -16,4 +16,6 @@ struct SigObserverPattern
 
 		conn.disconnect();
 	}
-};
+
+}
+

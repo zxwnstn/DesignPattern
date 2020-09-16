@@ -3,8 +3,8 @@
 #include "ChatRoom.h"
 #include "Person.h"
 
-struct ChattingRoomExec
-{
+namespace ChattingRoom {
+
 	static void exec()
 	{
 		ChatRoom room;
@@ -21,4 +21,5 @@ struct ChattingRoomExec
 
 		jane.pm("simon", "glad you could join us, simon");
 	}
+
 };

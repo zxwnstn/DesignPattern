@@ -5,6 +5,6 @@
 
 int main()
 {
-	ChattingRoomExec::exec();
+	ChattingRoom::exec();
 	MediatorEvent::exec();
 }

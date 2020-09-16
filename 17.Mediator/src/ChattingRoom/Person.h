@@ -1,17 +1,21 @@
 #pragma once
 
-struct ChatRoom;
+namespace ChattingRoom {
 
-struct Person
-{
-	std::string name;
-	ChatRoom* room = nullptr;
-	std::vector<std::string> chat_log;
+	struct ChatRoom;
 
-	Person(const std::string& name);
+	struct Person
+	{
+		std::string name;
+		ChatRoom* room = nullptr;
+		std::vector<std::string> chat_log;
 
-	void receive(const std::string& origin, const std::string& message);
-	void Say(const std::string& message);
-	void pm(const std::string& who, const std::string& message) const;
+		Person(const std::string& name);
 
-};
+		void receive(const std::string& origin, const std::string& message);
+		void Say(const std::string& message);
+		void pm(const std::string& who, const std::string& message) const;
+
+	};
+
+}
