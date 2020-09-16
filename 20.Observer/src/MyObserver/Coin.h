@@ -32,7 +32,7 @@ namespace MyObserver {
 			};
 		}
 		
-		void setConnectFunc(FuncType_ func)
+		void setConnectFunc(FuncType func)
 		{
 			connectFunc = func;
 			conn.disconnect();

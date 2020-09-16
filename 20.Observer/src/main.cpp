@@ -6,7 +6,7 @@
 
 int main()
 {
-	//BasicObserver::exec();
-	//SigObserver::exec();
+	BasicObserver::exec();
+	SigObserver::exec();
 	MyObserver::exec();
 }

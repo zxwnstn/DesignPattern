@@ -8,7 +8,10 @@ namespace MyObserver {
 	{
 		Coin c;
 		CoinObserver v;
+		CoinObserver v2;
+		v2.setConnectFunc([](Coin* coin) {std::cout << "나는 2번째\n"; });
 		c.subscribe(&v);
+		c.subscribe(&v2);
 
 		c.setValue(4);
 		c.setValue(5);
@@ -21,6 +24,7 @@ namespace MyObserver {
 		c.setValue(9);
 		c.setValue(10);
 		c.setValue(11);
+		c.unsubscribe(&v2);
 
 		v.setConnectFunc([](Coin* coin) {std::cout << coin->value << "\n"; });
 

@@ -8,7 +8,9 @@ namespace MyObserver {
 	template<typename T, typename FuncType = void(void)>
 	struct Observable
 	{
-		void subscribe(Observer<T, FuncType>* observer)
+		using Observer = Observer<T, FuncType>;
+
+		void subscribe(Observer* observer)
 		{
 			if (observer->connectedObj)
 			{
@@ -18,9 +20,9 @@ namespace MyObserver {
 			observer->connectedObj = static_cast<T*>(this);
 		}
 
-		void unsubscribe(Observer<T, FuncType>* observer)
+		void unsubscribe(Observer* observer)
 		{
-			if (observer->connectedObj == observer)
+			if (observer->connectedObj == static_cast<T*>(this))
 			{
 				observer->disConnect();
 			}

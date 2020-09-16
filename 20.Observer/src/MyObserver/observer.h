@@ -2,10 +2,10 @@
 
 namespace MyObserver {
 	
-	template<typename T, typename FuncType = void(void)>
+	template<typename T, typename FuncType_ = void(void)>
 	struct Observer
 	{
-		using FuncType_ = FuncType;
+		using FuncType = FuncType_;
 
 		boost::signals2::connection conn;
 		FuncType* connectFunc;
