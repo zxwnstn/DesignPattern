@@ -25,8 +25,6 @@ namespace MyObserver {
 
 	struct CoinObserver : Observer<Coin, void(Coin*)>
 	{
-		using FuncType = decltype(connectFunc);
-
 		CoinObserver()
 		{
 			connectFunc = [](Coin* coin) {
@@ -34,9 +32,11 @@ namespace MyObserver {
 			};
 		}
 		
-		void setConnectFunc(FuncType func)
+		void setConnectFunc(FuncType_ func)
 		{
 			connectFunc = func;
+			conn.disconnect();
+			reconnect();
 		}
 	};
 
