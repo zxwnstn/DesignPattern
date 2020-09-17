@@ -52,6 +52,26 @@ project "04.ProtoType"
 	filter "configurations:Release"
 		optimize "On"
 
+project "09.Decorator"
+	location "09.Decorator"
+	kind "ConsoleApp"
+	language "C++"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		symbols "On"
+	
+	filter "configurations:Release"
+		optimize "On"
+
 project "13.ChainOfResponsibility"
 	location "13.ChainOfResponsibility"
 	kind "ConsoleApp"
