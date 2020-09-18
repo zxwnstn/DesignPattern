@@ -91,6 +91,25 @@ project "13.ChainOfResponsibility"
 	filter "configurations:Release"
 		optimize "On"
 
+project "16.Iterator"
+	location "16.Iterator"
+	kind "ConsoleApp"
+	language "C++"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		symbols "On"
+	
+	filter "configurations:Release"
+		optimize "On"
+
 project "17.Mediator"
 	location "17.Mediator"
 	kind "ConsoleApp"
